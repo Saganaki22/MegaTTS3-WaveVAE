@@ -3,7 +3,7 @@
     MegaTTS3-WaveVAE <img src="./assets/fig/Hi.gif" width="40px">
     </h1>
     <p>
-    Unofficial Windows-Compatible Implementation<br>
+    Unofficial Windows-Compatible Implementation including WaveVAE<br>
     </p>
 </div>
 <div align="center">
