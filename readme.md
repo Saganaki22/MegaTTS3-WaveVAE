@@ -8,6 +8,7 @@
 </div>
 <div align="center">
     <a href="https://github.com/Saganaki22/MegaTTS3-WaveVAE"><img src="https://img.shields.io/badge/GitHub-Repository-black?logo=github" alt="GitHub"></a>
+    <a href="https://huggingface.co/drbaph/MegaTTS3-WaveVAE"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-yellow" alt="Hugging Face Model"></a>
     <a href="https://github.com/Saganaki22/MegaTTS3-WaveVAE/commits/main"><img src="https://img.shields.io/github/last-commit/Saganaki22/MegaTTS3-WaveVAE" alt="Last Commit"></a>
     <a href="#"><img src="https://img.shields.io/badge/Platform-Windows-blue?logo=windows" alt="Platform"></a>
     <a href="#"><img src="https://img.shields.io/badge/Python-3.10-brightgreen?logo=python" alt="Python"></a>
@@ -19,7 +20,7 @@
     <img src="https://img.shields.io/badge/Windows%20Fork-Saganaki22-%230077B5.svg?&style=flat-square&logo=github&logoColor=white" />
 </div>
 
-<img width="2241" height="1256" alt="image" src="https://github.com/user-attachments/assets/dab27b53-49a7-4e5c-a951-0ea320c37a61" />
+<img width="2241" height="1256" alt="MegaTTS3-WaveVAE Interface" src="https://github.com/user-attachments/assets/dab27b53-49a7-4e5c-a951-0ea320c37a61" />
 
 ## About This Fork
 
@@ -152,10 +153,27 @@ $env:PYTHONPATH="C:\path\to\MegaTTS3-WaveVAE;$env:PYTHONPATH"
 ```
 
 ### Step 8: Download Models
+
+**Option A: Via ModelScope (Recommended)**
 ```bash
-# Download the MegaTTS model
+# Download the MegaTTS model via ModelScope
 modelscope download --model ACoderPassBy/MegaTTS-SFT --local_dir ./checkpoints
 ```
+
+**Option B: Direct Download from Hugging Face**
+Alternatively, you can download the model files directly from our Hugging Face repository:
+
+1. Visit: [https://huggingface.co/drbaph/MegaTTS3-WaveVAE/tree/main](https://huggingface.co/drbaph/MegaTTS3-WaveVAE/tree/main)
+2. Download all the model files and folders
+3. Place them in the `./checkpoints/` folder in your project directory
+
+The checkpoints folder should contain:
+- `diffusion_transformer/`
+- `wavvae/` 
+- `g2p/`
+- `aligner_lm/`
+- `configuration.json`
+- `config.json`
 
 ### Step 9: Verify Installation
 ```bash
@@ -199,7 +217,9 @@ conda activate megatts3-env
 ```
 
 **2. AssertionError: | ckpt not found**
-This means the model files haven't been downloaded yet:
+This means the model files haven't been downloaded yet. Choose one of these methods:
+
+**Method A: Via ModelScope**
 ```bash
 # Activate the environment
 conda activate megatts3-env
@@ -210,6 +230,11 @@ cd path\to\MegaTTS3-WaveVAE
 # Download the model
 modelscope download --model ACoderPassBy/MegaTTS-SFT --local_dir ./checkpoints
 ```
+
+**Method B: Direct Download from Hugging Face**
+1. Visit: [https://huggingface.co/drbaph/MegaTTS3-WaveVAE/tree/main](https://huggingface.co/drbaph/MegaTTS3-WaveVAE/tree/main)
+2. Download all model files and folders
+3. Place them in the `./checkpoints/` folder in your project directory
 
 **3. GPU not detected:**
 - Ensure you installed the correct PyTorch version for your GPU
