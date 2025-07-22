@@ -21,10 +21,9 @@
 
 <img width="2241" height="1256" alt="image" src="https://github.com/user-attachments/assets/dab27b53-49a7-4e5c-a951-0ea320c37a61" />
 
-
 ## About This Fork
 
-This is an **unofficial Windows-compatible fork + WaveVAE** of the original [ByteDance MegaTTS3](https://github.com/bytedance/MegaTTS3) repository. This version includes:
+This is an **unofficial Windows-compatible fork** of the original [ByteDance MegaTTS3](https://github.com/bytedance/MegaTTS3) repository. This version includes:
 
 - ✅ **Windows Compatibility**: Pre-configured for Windows installation
 - ✅ **GPU Support**: Optimized PyTorch installations for RTX 30xx/40xx and RTX 50xx series
@@ -199,16 +198,29 @@ conda deactivate
 conda activate megatts3-env
 ```
 
-**2. GPU not detected:**
+**2. AssertionError: | ckpt not found**
+This means the model files haven't been downloaded yet:
+```bash
+# Activate the environment
+conda activate megatts3-env
+
+# Navigate to your project directory
+cd path\to\MegaTTS3-WaveVAE
+
+# Download the model
+modelscope download --model ACoderPassBy/MegaTTS-SFT --local_dir ./checkpoints
+```
+
+**3. GPU not detected:**
 - Ensure you installed the correct PyTorch version for your GPU
 - Check CUDA drivers are installed and up to date
 
-**3. FFmpeg errors:**
+**4. FFmpeg errors:**
 ```bash
 conda install -c conda-forge ffmpeg
 ```
 
-**4. Audio file issues:**
+**5. Audio file issues:**
 - Use WAV format for best results
 - Keep reference audio under 24 seconds
 - Ensure good audio quality (clear speech, minimal noise)
