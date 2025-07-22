@@ -1,183 +1,202 @@
 <div align="center">
     <h1>
-    MegaTTS 3 <img src="./assets/fig/Hi.gif" width="40px">
+    MegaTTS3-WaveVAE <img src="./assets/fig/Hi.gif" width="40px">
     </h1>
     <p>
-    Official PyTorch Implementation<br>
+    Unofficial Windows-Compatible Implementation<br>
     </p>
 </div>
 <div align="center">
-    <a href="https://huggingface.co/spaces/ByteDance/MegaTTS3"><img src="https://img.shields.io/badge/Hugging%20Face-Space%20Demo-yellow" alt="Hugging Face"></a>
-    <a href="#"><img src="https://img.shields.io/badge/Platform-linux-lightgrey" alt="version"></a>
-    <a href="#"><img src="https://img.shields.io/badge/Python-3.10-brightgreen" alt="version"></a>
-    <a href="#"><img src="https://img.shields.io/badge/PyTorch-2.3.0-orange" alt="python"></a>
-    <a href="#"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="mit"></a>
+    <a href="https://github.com/Saganaki22/MegaTTS3-WaveVAE"><img src="https://img.shields.io/badge/GitHub-Repository-black?logo=github" alt="GitHub"></a>
+    <a href="https://github.com/Saganaki22/MegaTTS3-WaveVAE/commits/main"><img src="https://img.shields.io/github/last-commit/Saganaki22/MegaTTS3-WaveVAE" alt="Last Commit"></a>
+    <a href="#"><img src="https://img.shields.io/badge/Platform-Windows-blue?logo=windows" alt="Platform"></a>
+    <a href="#"><img src="https://img.shields.io/badge/Python-3.10-brightgreen?logo=python" alt="Python"></a>
+    <a href="#"><img src="https://img.shields.io/badge/PyTorch-2.3.0+-orange?logo=pytorch" alt="PyTorch"></a>
+    <a href="https://github.com/Saganaki22/MegaTTS3-WaveVAE/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License"></a>
 </div>
 <div align="center">
-    <img src="https://img.shields.io/badge/Bytedance-%230077B5.svg?&style=flat-square&logo=bytedance&logoColor=white" />
-    <img src="https://img.shields.io/badge/Zhejiang University-%230077B5.svg?&style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNy4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjUgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTI0My40IDIuNmwtMjI0IDk2Yy0xNCA2LTIxLjggMjEtMTguNyAzNS44UzE2LjggMTYwIDMyIDE2MGwwIDhjMCAxMy4zIDEwLjcgMjQgMjQgMjRsNDAwIDBjMTMuMyAwIDI0LTEwLjcgMjQtMjRsMC04YzE1LjIgMCAyOC4zLTEwLjcgMzEuMy0yNS42cy00LjgtMjkuOS0xOC43LTM1LjhsLTIyNC05NmMtOC0zLjQtMTcuMi0zLjQtMjUuMiAwek0xMjggMjI0bC02NCAwIDAgMTk2LjNjLS42IC4zLTEuMiAuNy0xLjggMS4xbC00OCAzMmMtMTEuNyA3LjgtMTcgMjIuNC0xMi45IDM1LjlTMTcuOSA1MTIgMzIgNTEybDQ0OCAwYzE0LjEgMCAyNi41LTkuMiAzMC42LTIyLjdzLTEuMS0yOC4xLTEyLjktMzUuOWwtNDgtMzJjLS42LS40LTEuMi0uNy0xLjgtMS4xTDQ0OCAyMjRsLTY0IDAgMCAxOTItNDAgMCAwLTE5Mi02NCAwIDAgMTkyLTQ4IDAgMC0xOTItNjQgMCAwIDE5Mi00MCAwIDAtMTkyek0yNTYgNjRhMzIgMzIgMCAxIDEgMCA2NCAzMiAzMiAwIDEgMSAwLTY0eiIvPjwvc3ZnPg==&logoColor=white" />
+    <img src="https://img.shields.io/badge/Original%20by-Bytedance-%230077B5.svg?&style=flat-square&logo=bytedance&logoColor=white" />
+    <img src="https://img.shields.io/badge/Windows%20Fork-Saganaki22-%230077B5.svg?&style=flat-square&logo=github&logoColor=white" />
 </div>
 
-## Key features
+## About This Fork
+
+This is an **unofficial Windows-compatible fork** of the original [ByteDance MegaTTS3](https://github.com/bytedance/MegaTTS3) repository. This version includes:
+
+- ✅ **Windows Compatibility**: Pre-configured for Windows installation
+- ✅ **GPU Support**: Optimized PyTorch installations for RTX 30xx/40xx and RTX 50xx series
+- ✅ **Simplified Setup**: Streamlined installation process with proper dependencies
+- ✅ **Enhanced Web UI**: Improved Gradio interface with examples and better user experience
+- ✅ **WaveVAE Included**: Includes the WaveVAE encoder/decoder thanks to [ACoderPassBy/MegaTTS-SFT](https://modelscope.cn/models/ACoderPassBy/MegaTTS-SFT)
+
+## Key Features
 - 🚀**Lightweight and Efficient:** The backbone of the TTS Diffusion Transformer has only 0.45B parameters.
-- 🎧**Ultra High-Quality Voice Cloning:** You can try our model at [Huggingface Demo](https://huggingface.co/spaces/ByteDance/MegaTTS3)🎉. The .wav and .npy files can be found at [link1](https://drive.google.com/drive/folders/1QhcHWcy20JfqWjgqZX1YM3I6i9u4oNlr?usp=sharing). Submit a sample (.wav format, < 24s, and please do not contain space in filename) on [link2](https://drive.google.com/drive/folders/1gCWL1y_2xu9nIFhUX_OW5MbcFuB7J5Cl?usp=sharing) to receive .npy voice latents you can use locally.
+- 🎧**Ultra High-Quality Voice Cloning:** Zero-shot voice cloning with just a reference audio sample.
 - 🌍**Bilingual Support:** Supports both Chinese and English, and code-switching.
-- ✍️**Controllable:** Supports accent intensity control ✅ and fine-grained pronunciation/duration adjustment (coming soon).
-
-[MegaTTS 3 Demo Video](https://github.com/user-attachments/assets/0174c111-f392-4376-a34b-0b5b8164aacc)
-
-<div style='width:100%;text-align:center'>
-<img src="./assets/fig/table_tts.png" width="550px">
-</div>
-
-## 🎯Roadmap
-
-- **[2025-03-22]** Our project has been released!
-
+- ✍️**Controllable:** Supports accent intensity control and fine-grained pronunciation adjustment.
+- 💻**Windows Ready:** Fully compatible with Windows 10/11.
 
 ## Installation
-``` sh
-# Clone the repository
-git clone https://github.com/bytedance/MegaTTS3
-cd MegaTTS3
-```
-**Requirements (for Linux)**
-``` sh
 
-# Create a python 3.10 conda env (you could also use virtualenv)
-conda create -n megatts3-env python=3.10
-conda activate megatts3-env
-pip install -r requirements.txt
+### Prerequisites
+- Windows 10/11
+- Python 3.10
+- Conda (Miniconda or Anaconda)
+- NVIDIA GPU (recommended)
 
-# Set the root directory
-export PYTHONPATH="/path/to/MegaTTS3:$PYTHONPATH"
+### Step 1: Install Conda
+If you don't have Conda installed:
+1. Download [Miniconda](https://docs.conda.io/en/latest/miniconda.html) for Windows
+2. Install with "Add to PATH" option checked
+3. Restart your terminal
 
-# [Optional] Set GPU
-export CUDA_VISIBLE_DEVICES=0
-
-# If you encounter bugs with pydantic in inference, you should check if the versions of pydantic and gradio are matched.
-# [Note] if you encounter bugs related with httpx, please check that whether your environmental variable "no_proxy" has patterns like "::"
+### Step 2: Clone Repository
+```bash
+git clone https://github.com/Saganaki22/MegaTTS3-WaveVAE
+cd MegaTTS3-WaveVAE
 ```
 
-**Requirements (for Windows)**
-``` sh
-# [The Windows version is currently under testing]
-# Comment below dependence in requirements.txt:
-# # WeTextProcessing==1.0.4.1
-
-# Create a python 3.10 conda env (you could also use virtualenv)
+### Step 3: Create Python Environment
+```bash
+# Create Python 3.10 environment
 conda create -n megatts3-env python=3.10
 conda activate megatts3-env
+```
+
+### Step 4: Install Dependencies
+```bash
+# Install base requirements
 pip install -r requirements.txt
+
+# Install pynini through conda
 conda install -y -c conda-forge pynini==2.1.5
-pip install WeTextProcessing==1.0.3
-
-# [Optional] If you want GPU inference, you may need to install specific version of PyTorch for your GPU from https://pytorch.org/.
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
-
-# [Note] if you encounter bugs related with `ffprobe` or `ffmpeg`, you can install it through `conda install -c conda-forge ffmpeg`
-
-# Set environment variable for root directory
-set PYTHONPATH="C:\path\to\MegaTTS3;%PYTHONPATH%" # Windows
-$env:PYTHONPATH="C:\path\to\MegaTTS3;%PYTHONPATH%" # Powershell on Windows
-conda env config vars set PYTHONPATH="C:\path\to\MegaTTS3;%PYTHONPATH%" # For conda users
-
-# [Optional] Set GPU
-set CUDA_VISIBLE_DEVICES=0 # Windows
-$env:CUDA_VISIBLE_DEVICES=0 # Powershell on Windows
-
 ```
 
-**Requirements (for Docker)**
-``` sh
-# [The Docker version is currently under testing]
-# ! You should download the pretrained checkpoint before running the following command
-docker build . -t megatts3:latest
+### Step 5: Install PyTorch (Choose Your GPU)
 
-# For GPU inference
-docker run -it -p 7929:7929 --gpus all -e CUDA_VISIBLE_DEVICES=0 megatts3:latest
-# For CPU inference
-docker run -it -p 7929:7929  megatts3:latest
-
-# Visit http://0.0.0.0:7929/ for gradio.
+**For RTX 30xx/40xx Series (CUDA 12.6):**
+```bash
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
 ```
 
-
-**Model Download**
-
-The pretrained checkpoint can be found at [Google Drive](https://drive.google.com/drive/folders/1CidiSqtHgJTBDAHQ746_on_YR0boHDYB?usp=sharing) or [Huggingface](https://huggingface.co/ByteDance/MegaTTS3). Please download them and put them to ``./checkpoints/xxx``.
-
-> [!IMPORTANT]  
-> For security issues, we do not upload the parameters of WaveVAE encoder to the above links. You can only use the pre-extracted latents from [link1](https://drive.google.com/drive/folders/1QhcHWcy20JfqWjgqZX1YM3I6i9u4oNlr?usp=sharing) for inference. If you want to synthesize speech for speaker A, you need "A.wav" and "A.npy" in the same directory. If you have any questions or suggestions for our model, please email us.
-> 
-> This project is primarily intended for academic purposes. For academic datasets requiring evaluation, you may upload them to the voice request queue in [link2](https://drive.google.com/drive/folders/1gCWL1y_2xu9nIFhUX_OW5MbcFuB7J5Cl?usp=sharing) (within 24s for each clip). After verifying that your uploaded voices are free from safety issues, we will upload their latent files to [link1](https://drive.google.com/drive/folders/1QhcHWcy20JfqWjgqZX1YM3I6i9u4oNlr?usp=sharing) as soon as possible.
-> 
-> In the coming days, we will also prepare and release the latent representations for some common TTS benchmarks.
-
-## Inference
-
-**Command-Line Usage (Standard)**
-``` bash
-# p_w (intelligibility weight), t_w (similarity weight). Typically, prompt with more noises requires higher p_w and t_w
-python tts/infer_cli.py --input_wav 'assets/Chinese_prompt.wav'  --input_text "另一边的桌上,一位读书人嗤之以鼻道,'佛子三藏,神子燕小鱼是什么样的人物,李家的那个李子夜如何与他们相提并论？'" --output_dir ./gen
-
-# As long as audio volume and pronunciation are appropriate, increasing --t_w within reasonable ranges (2.0~5.0)
-# will increase the generated speech's expressiveness and similarity (especially for some emotional cases).
-python tts/infer_cli.py --input_wav 'assets/English_prompt.wav' --input_text 'As his long promised tariff threat turned into reality this week, top human advisers began fielding a wave of calls from business leaders, particularly in the automotive sector, along with lawmakers who were sounding the alarm.' --output_dir ./gen --p_w 2.0 --t_w 3.0
-```
-**Command-Line Usage (for TTS with Accents)**
-``` bash
-# When p_w (intelligibility weight) ≈ 1.0, the generated audio closely retains the speaker’s original accent. As p_w increases, it shifts toward standard pronunciation. 
-# t_w (similarity weight) is typically set 0–3 points higher than p_w for optimal results.
-# Useful for accented TTS or solving the accent problems in cross-lingual TTS.
-python tts/infer_cli.py --input_wav 'assets/English_prompt.wav' --input_text '这是一条有口音的音频。' --output_dir ./gen --p_w 1.0 --t_w 3.0
-
-python tts/infer_cli.py --input_wav 'assets/English_prompt.wav' --input_text '这条音频的发音标准一些了吗？' --output_dir ./gen --p_w 2.5 --t_w 2.5
+**For RTX 50xx Series (CUDA 12.8):**
+```bash
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
 ```
 
-**Web UI Usage**
-``` bash
-# We also support cpu inference, but it may take about 30 seconds (for 10 inference steps).
-python tts/gradio_api.py
+**For CPU Only:**
+```bash
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
 ```
 
-## Submodules
-> [!TIP]
-> In addition to TTS, some submodules in this project may also have additional usages.
-> See ``./tts/frontend_fuction.py`` and ``./tts/infer_cli.py`` for example code.
+### Step 6: Install Additional Dependencies
+```bash
+# Install modelscope for model downloads
+pip install modelscope
 
-### Aligner
-**Description:** a robust speech-text aligner model trained using pseudo-labels generated by a large number of MFA expert models.
+# Install FFmpeg if needed
+conda install -c conda-forge ffmpeg
+```
 
-**Usage**: 1) Prepare the finetuning dataset for our model; 2) Filter the large-scale speech dataset (if the aligner fails to align a certain speech clip, it is likely to be noisy); 3) Phoneme recognition; 4) Speech segmentation.
+### Step 7: Set Environment Variables
+**Option 1 - Permanent (Recommended):**
+```bash
+conda env config vars set PYTHONPATH="C:\path\to\MegaTTS3-WaveVAE;%PYTHONPATH%"
+conda deactivate
+conda activate megatts3-env
+```
 
-### Graphme-to-Phoneme Model
-**Description:** a Qwen2.5-0.5B model finetuned for robust graphme-to-phoneme conversion.
+**Option 2 - Temporary:**
+```bash
+# Command Prompt
+set PYTHONPATH="C:\path\to\MegaTTS3-WaveVAE;%PYTHONPATH%"
 
-**Usage**: Graphme-to-phoneme conversion.
+# PowerShell
+$env:PYTHONPATH="C:\path\to\MegaTTS3-WaveVAE;$env:PYTHONPATH"
+```
 
-### WaveVAE
-**Description:** a strong waveform VAE that can compress 24 kHz speeche into 25 Hz acoustic latent and reconstruct the original wave almost losslessly.
+### Step 8: Download Models
+```bash
+# Download the MegaTTS model
+modelscope download --model ACoderPassBy/MegaTTS-SFT --local_dir ./checkpoints
+```
 
-**Usage:** 1) Acoustic latents can provide a more compact and discriminative training target for speech synthesis models compared to mel-spectrograms, accelerating convergence; 2) Used as acoustic latents for voice conversion; 3) High-quality vocoder.
+### Step 9: Verify Installation
+```bash
+# Test PyTorch GPU support
+python -c "import torch; print('CUDA available:', torch.cuda.is_available()); print('GPU:', torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'CPU only')"
+```
 
-<div style='width:100%;text-align:center'>
-<img src="./assets/fig/table_wavvae.png" width="650px">
-</div>
+## Usage
 
+### Web Interface (Recommended)
+```bash
+# Start the web UI
+python tts/megatts3_gradio.py
+```
+Then open http://localhost:7929 in your browser.
 
-## Security
-If you discover a potential security issue in this project, or think you may
-have discovered a security issue, we ask that you notify Bytedance Security via our [security center](https://security.bytedance.com/src) or [sec@bytedance.com](sec@bytedance.com).
+### Command Line Interface
+```bash
+# Basic usage
+python tts/infer_cli.py --input_wav 'path/to/reference.wav' --input_text "Your text here" --output_dir ./output
 
-Please do **not** create a public GitHub issue.
+# With quality settings
+python tts/infer_cli.py --input_wav 'path/to/reference.wav' --input_text "Your text here" --output_dir ./output --p_w 2.0 --t_w 3.0
+```
+
+### Parameters Explained
+- `--p_w` (Intelligibility Weight): 1.0-5.0, higher = clearer pronunciation
+- `--t_w` (Similarity Weight): 0.0-10.0, higher = more similar to reference voice
+- For best results, set t_w 0-3 points higher than p_w
+
+## Troubleshooting
+
+### Common Issues
+
+**1. "No module named 'tts'" error:**
+```bash
+# Make sure PYTHONPATH is set correctly
+conda env config vars set PYTHONPATH="C:\your\path\to\MegaTTS3-WaveVAE"
+conda deactivate
+conda activate megatts3-env
+```
+
+**2. GPU not detected:**
+- Ensure you installed the correct PyTorch version for your GPU
+- Check CUDA drivers are installed and up to date
+
+**3. FFmpeg errors:**
+```bash
+conda install -c conda-forge ffmpeg
+```
+
+**4. Audio file issues:**
+- Use WAV format for best results
+- Keep reference audio under 24 seconds
+- Ensure good audio quality (clear speech, minimal noise)
+
+## Model Information
+
+This implementation uses the official MegaTTS3 model with:
+- **Model Size**: 0.45B parameters
+- **Supported Languages**: English, Chinese, and code-switching
+- **Audio Format**: 24kHz WAV files
+- **Max Reference Length**: 24 seconds
+
+## Contributing
+
+This is a Windows compatibility fork. For issues with the core model, please refer to the [original repository](https://github.com/bytedance/MegaTTS3). For Windows-specific issues, please open an issue in this repository.
 
 ## License
-This project is licensed under the [Apache-2.0 License](LICENSE).
+
+This project is licensed under the [Apache-2.0 License](LICENSE), same as the original MegaTTS3 project.
 
 ## Citation
-This repo contains forced-align version of `Sparse Alignment Enhanced Latent Diffusion Transformer for Zero-Shot Speech Synthesis` and the WavVAE is mainly based on `Wavtokenizer: an efficient acoustic discrete codec tokenizer for audio language modeling`. Compared to the model described in paper, the repository includes additional models. These models not only enhance the stability and cloning capabilities of the algorithm but can also be independently utilized to serve a wider range of scenarios.
-```
+
+If you use this work, please cite the original MegaTTS3 paper:
+
+```bibtex
 @article{jiang2025sparse,
   title={Sparse Alignment Enhanced Latent Diffusion Transformer for Zero-Shot Speech Synthesis},
   author={Jiang, Ziyue and Ren, Yi and Li, Ruiqi and Ji, Shengpeng and Ye, Zhenhui and Zhang, Chen and Jionghao, Bai and Yang, Xiaoda and Zuo, Jialong and Zhang, Yu and others},
@@ -192,3 +211,9 @@ This repo contains forced-align version of `Sparse Alignment Enhanced Latent Dif
   year={2024}
 }
 ```
+
+## Acknowledgments
+
+- Original MegaTTS3 by [ByteDance](https://github.com/bytedance/MegaTTS3)
+- WaveVAE model provided by [ACoderPassBy/MegaTTS-SFT](https://modelscope.cn/models/ACoderPassBy/MegaTTS-SFT/summary)
+- Windows compatibility improvements by [Saganaki22](https://github.com/Saganaki22)
