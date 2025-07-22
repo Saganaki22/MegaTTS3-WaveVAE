@@ -3,7 +3,7 @@
     MegaTTS3-WaveVAE <img src="./assets/fig/Hi.gif" width="40px">
     </h1>
     <p>
-    Unofficial Windows-Compatible Implementation including WaveVAE<br>
+    Unofficial Windows-Compatible Implementation<br>
     </p>
 </div>
 <div align="center">
@@ -40,9 +40,43 @@ This is an **unofficial Windows-compatible fork** of the original [ByteDance Meg
 
 ### Prerequisites
 - Windows 10/11
+- **Conda (Miniconda or Anaconda)** - [Download here](https://docs.conda.io/en/latest/miniconda.html)
+- NVIDIA GPU (recommended) or CPU
+- Internet connection
+
+### Option 1: One-Click Installer (Recommended)
+
+**[📥 Download One-Click Installer](https://github.com/Saganaki22/MegaTTS3-WaveVAE/releases/tag/Installer)**
+
+The easiest way to install MegaTTS3-WaveVAE:
+- ✅ **Automated installation** of all dependencies
+- ✅ **GPU Detection** with choice of NVIDIA 30xx/40xx/50xx series or CPU
+- ✅ **One-click setup** for Windows x64
+
+**Instructions:**
+1. **Install Conda first** if you don't have it: [Download Miniconda](https://docs.conda.io/en/latest/miniconda.html) (check "Add to PATH" during installation)
+2. Download the installer from the [releases page](https://github.com/Saganaki22/MegaTTS3-WaveVAE/releases/tag/Installer)
+3. **Unzip both files** in the folder where you want the project installed
+4. **Run `install_megatts3_launcher.bat`** 
+5. **Follow the on-screen instructions**
+6. Select your GPU type when prompted (RTX 30xx/40xx/50xx or CPU)
+7. Wait for installation to complete (~10-20 minutes)
+
+The installer will automatically:
+- Install Conda environment with Python 3.10
+- Download and install all required dependencies
+- Install the correct PyTorch version for your GPU
+- Optionally download the model files
+- Set up the project ready to run
+
+### Option 2: Manual Installation
+
+For advanced users or if you prefer manual control:
+
+### Manual Installation Prerequisites
 - Python 3.10
 - Conda (Miniconda or Anaconda)
-- NVIDIA GPU (recommended)
+- Git
 
 ### Step 1: Install Conda
 If you don't have Conda installed:
@@ -215,5 +249,5 @@ If you use this work, please cite the original MegaTTS3 paper:
 ## Acknowledgments
 
 - Original MegaTTS3 by [ByteDance](https://github.com/bytedance/MegaTTS3)
-- WaveVAE model provided by [ACoderPassBy/MegaTTS-SFT](https://modelscope.cn/models/ACoderPassBy/MegaTTS-SFT/summary)
+- WaveVAE model provided by [ACoderPassBy/MegaTTS-SFT](https://modelscope.cn/models/ACoderPassBy/MegaTTS-SFT/summary) and [mrfakename/MegaTTS3-VoiceCloning](https://huggingface.co/mrfakename/MegaTTS3-VoiceCloning/tree/main)
 - Windows compatibility improvements by [Saganaki22](https://github.com/Saganaki22)
