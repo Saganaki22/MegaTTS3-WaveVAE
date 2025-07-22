@@ -21,7 +21,7 @@
 
 ## About This Fork
 
-This is an **unofficial Windows-compatible fork** of the original [ByteDance MegaTTS3](https://github.com/bytedance/MegaTTS3) repository. This version includes:
+This is an **unofficial Windows-compatible fork + WaveVAE** of the original [ByteDance MegaTTS3](https://github.com/bytedance/MegaTTS3) repository. This version includes:
 
 - ✅ **Windows Compatibility**: Pre-configured for Windows installation
 - ✅ **GPU Support**: Optimized PyTorch installations for RTX 30xx/40xx and RTX 50xx series
