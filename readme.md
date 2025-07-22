@@ -19,6 +19,9 @@
     <img src="https://img.shields.io/badge/Windows%20Fork-Saganaki22-%230077B5.svg?&style=flat-square&logo=github&logoColor=white" />
 </div>
 
+<img width="2241" height="1256" alt="image" src="https://github.com/user-attachments/assets/dab27b53-49a7-4e5c-a951-0ea320c37a61" />
+
+
 ## About This Fork
 
 This is an **unofficial Windows-compatible fork + WaveVAE** of the original [ByteDance MegaTTS3](https://github.com/bytedance/MegaTTS3) repository. This version includes:
