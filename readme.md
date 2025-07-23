@@ -3,7 +3,7 @@
     MegaTTS3-WaveVAE <img src="./assets/fig/Hi.gif" width="40px">
     </h1>
     <p>
-    Unofficial Windows-Compatible Implementation<br>
+    Unofficial Windows-Compatible Implementation with Voice Library & Audiobook Studio<br>
     </p>
 </div>
 <div align="center">
@@ -29,15 +29,30 @@ This is an **unofficial Windows-compatible fork** of the original [ByteDance Meg
 - ✅ **Windows Compatibility**: Pre-configured for Windows installation
 - ✅ **GPU Support**: Optimized PyTorch installations for RTX 30xx/40xx and RTX 50xx series
 - ✅ **Simplified Setup**: Streamlined installation process with proper dependencies
-- ✅ **Enhanced Web UI**: Improved Gradio interface with examples and better user experience
+- ✅ **Enhanced Web UI**: Comprehensive Gradio interface with Voice Library & Audiobook Studio
 - ✅ **WaveVAE Included**: Includes the WaveVAE encoder/decoder thanks to [ACoderPassBy/MegaTTS-SFT](https://modelscope.cn/models/ACoderPassBy/MegaTTS-SFT)
+- 🎭 **Voice Library System**: Create, save, and manage voice profiles with custom settings
+- 📚 **Audiobook Creation**: Generate single-voice and multi-character audiobooks with smart chunking
+- 🚀 **Batch Processing**: Optimized multi-processing for faster audiobook generation
 
 ## Key Features
+
+### Core TTS Features
 - 🚀**Lightweight and Efficient:** The backbone of the TTS Diffusion Transformer has only 0.45B parameters.
 - 🎧**Ultra High-Quality Voice Cloning:** Zero-shot voice cloning with just a reference audio sample.
 - 🌍**Bilingual Support:** Supports both Chinese and English, and code-switching.
 - ✍️**Controllable:** Supports accent intensity control and fine-grained pronunciation adjustment.
 - 💻**Windows Ready:** Fully compatible with Windows 10/11.
+
+### New Voice Library & Audiobook Features
+- 🎭 **Voice Profile Management**: Save and organize voice profiles with custom names, descriptions, and settings
+- 📝 **Smart Text Processing**: Automatic text chunking at sentence boundaries for optimal processing
+- 📚 **Single-Voice Audiobooks**: Create consistent audiobooks with one narrator voice
+- 🎭 **Multi-Voice Audiobooks**: Support for multiple character voices using voice tags `[character_name]`
+- 🚀 **Batch Processing**: Optimized parallel processing for faster audiobook generation
+- 📁 **Project Management**: Organized output with project folders and numbered audio chunks
+- 🔄 **Persistent Settings**: Voice library path and configurations saved between sessions
+- 📄 **File Upload Support**: Load text from .txt, .md, and .rtf files for audiobook creation
 
 ## Installation
 
@@ -185,10 +200,79 @@ python -c "import torch; print('CUDA available:', torch.cuda.is_available()); pr
 
 ### Web Interface (Recommended)
 ```bash
-# Start the web UI
-python tts/megatts3_gradio.py
+# Start the Voice Library & Audiobook Studio
+python megatts3_gradio.py
 ```
 Then open http://localhost:7929 in your browser.
+
+The enhanced web interface includes four main tabs:
+
+#### 🎤 Text-to-Speech
+- Choose from saved voice profiles or upload reference audio
+- Real-time voice selection with automatic settings loading
+- Advanced parameter controls for fine-tuning
+
+#### 📚 Voice Library
+- **Create Voice Profiles**: Save reference audio with custom names and descriptions
+- **Manage Settings**: Store inference timesteps, intelligibility, and similarity weights per voice
+- **Test Voices**: Preview voices before saving with custom test text
+- **Organize Profiles**: View, edit, and delete voice profiles with rich metadata
+
+#### 📖 Audiobook Creation - Single Voice
+- **Text Input**: Paste text or upload .txt/.md/.rtf files
+- **Smart Chunking**: Automatic text splitting at sentence boundaries (~50 words per chunk)
+- **Voice Selection**: Choose from your saved voice library
+- **Project Management**: Organized output with project folders
+- **Batch Processing**: Efficient parallel generation for long texts
+
+#### 🎭 Audiobook Creation - Multi-Voice
+- **Voice Tagging**: Use `[character_name]` tags to assign text to different voices
+- **Character Management**: Automatic detection and validation of voice assignments
+- **Batch Processing**: Optimized parallel processing for multiple voices
+- **Project Organization**: Files named with character information (e.g., `project_001_narrator.wav`)
+
+### Voice Library Management
+
+#### Creating Voice Profiles
+1. Go to the **Voice Library** tab
+2. Set your voice library folder path (saved automatically)
+3. Fill in voice details:
+   - **Voice Name**: Internal identifier (e.g., `deep_male_narrator`)
+   - **Display Name**: User-friendly name (e.g., `Deep Male Narrator`)
+   - **Description**: Optional details about the voice
+4. Upload reference audio (10-25 seconds of clear speech)
+5. Adjust TTS parameters (timesteps, intelligibility, similarity weights)
+6. Test the voice with sample text
+7. Save the profile for reuse
+
+#### Using Saved Voices
+- In TTS tab: Select from the voice dropdown
+- Settings automatically load (timesteps, weights)
+- Reference audio is used automatically
+- Manual audio upload is hidden when using saved voices
+
+### Audiobook Creation Workflow
+
+#### Single-Voice Audiobooks
+1. Go to **Audiobook Creation - Single Voice** tab
+2. Add your text (paste or upload file)
+3. Select a voice from your library
+4. Set a project name
+5. Click **Validate Input** to check everything
+6. Click **Create Audiobook** to generate
+
+#### Multi-Voice Audiobooks
+1. Go to **Audiobook Creation - Multi-Voice** tab
+2. Format your text with voice tags:
+   ```
+   [narrator] Once upon a time, in a land far away...
+   [princess] "Hello there!" she said cheerfully.
+   [narrator] The mysterious figure walked away.
+   [wizard] "You shall not pass!" he declared.
+   ```
+3. Set a project name
+4. Click **Validate Text & Voices** to check all voices exist
+5. Click **Create Multi-Voice Audiobook** to generate
 
 ### Command Line Interface
 ```bash
@@ -203,6 +287,77 @@ python tts/infer_cli.py --input_wav 'path/to/reference.wav' --input_text "Your t
 - `--p_w` (Intelligibility Weight): 1.0-5.0, higher = clearer pronunciation
 - `--t_w` (Similarity Weight): 0.0-10.0, higher = more similar to reference voice
 - For best results, set t_w 0-3 points higher than p_w
+
+## Voice Library System
+
+### Configuration Management
+- **Persistent Settings**: Voice library path saved in `megatts3_config.json`
+- **Voice Profiles**: Each voice stored in separate folder with `config.json`
+- **Automatic Loading**: Voice settings automatically applied when selected
+
+### File Structure
+```
+voice_library/
+├── deep_male_narrator/
+│   ├── config.json           # Voice metadata and settings
+│   └── reference.wav         # Reference audio file
+├── female_character/
+│   ├── config.json
+│   └── reference.mp3
+└── ...
+```
+
+### Voice Profile Format
+```json
+{
+  "display_name": "Deep Male Narrator",
+  "description": "Authoritative voice for main character",
+  "audio_file": "reference.wav",
+  "infer_timestep": 32,
+  "p_w": 1.4,
+  "t_w": 3.0,
+  "created_date": "1640995200.0",
+  "version": "1.0"
+}
+```
+
+## Audiobook Features
+
+### Smart Text Chunking
+- **Sentence Boundary Detection**: Splits at natural sentence endings
+- **Word Count Optimization**: ~50 words per chunk for optimal processing
+- **Punctuation Handling**: Handles multiple punctuation marks (. ! ?)
+- **Character Limit**: Minimum 10 characters per text input
+
+### Multi-Voice Processing
+- **Voice Tag System**: Use `[voice_name]` to assign text to characters
+- **Character Validation**: Ensures all referenced voices exist in library
+- **Automatic Cleanup**: Removes character names from text if they match voice tags
+- **Batch Generation**: Parallel processing for multiple voices
+
+### Project Organization
+- **Project Folders**: All output organized in `audiobook_projects/project_name/`
+- **Numbered Chunks**: Files named sequentially (001, 002, 003...)
+- **Character Identification**: Multi-voice files include character names
+- **Combined Preview**: Full audiobook preview in web interface
+
+### Output Examples
+**Single Voice:**
+```
+audiobook_projects/my_story/
+├── my_story_001.wav
+├── my_story_002.wav
+└── my_story_003.wav
+```
+
+**Multi-Voice:**
+```
+audiobook_projects/dialogue_story/
+├── dialogue_story_001_narrator.wav
+├── dialogue_story_002_princess.wav
+├── dialogue_story_003_narrator.wav
+└── dialogue_story_004_wizard.wav
+```
 
 ## Troubleshooting
 
@@ -249,6 +404,32 @@ conda install -c conda-forge ffmpeg
 - Use WAV format for best results
 - Keep reference audio under 24 seconds
 - Ensure good audio quality (clear speech, minimal noise)
+
+**6. Voice Library Issues:**
+- **Voice not found**: Check that voice profiles are properly saved in the voice library folder
+- **Config errors**: Ensure `config.json` files are properly formatted
+- **Path issues**: Use full absolute paths for voice library folder
+- **Permission errors**: Ensure write access to voice library and project folders
+
+**7. Audiobook Generation Issues:**
+- **Empty chunks**: Text may be too short after cleaning - use longer sentences
+- **Voice validation fails**: Ensure all `[voice_name]` tags match saved voice profile names exactly
+- **Memory issues**: For very long texts, consider breaking into smaller projects
+- **Batch processing slow**: Reduce batch size or use fewer worker processes
+
+## Advanced Configuration
+
+### Batch Processing Settings
+The system uses optimized batch processing for audiobook generation:
+- **Default Batch Size**: 3 chunks per batch
+- **Worker Processes**: 1 worker by default (adjustable)
+- **GPU Memory**: Automatically managed per batch
+
+### Performance Optimization
+- **GPU Utilization**: Batched processing maximizes GPU efficiency
+- **Memory Management**: Automatic cleanup between batches
+- **Parallel Processing**: Multiple chunks processed simultaneously
+- **Smart Queuing**: Optimized task distribution
 
 ## Model Information
 
