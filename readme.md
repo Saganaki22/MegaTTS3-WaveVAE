@@ -20,7 +20,8 @@
     <img src="https://img.shields.io/badge/Windows%20Fork-Saganaki22-%230077B5.svg?&style=flat-square&logo=github&logoColor=white" />
 </div>
 
-<img width="2241" height="1256" alt="MegaTTS3-WaveVAE Interface" src="https://github.com/user-attachments/assets/dab27b53-49a7-4e5c-a951-0ea320c37a61" />
+<img width="1932" height="1265" alt="image" src="https://github.com/user-attachments/assets/eac17cee-743b-4c8d-84ad-ffd04d997d73" />
+
 
 ## About This Fork
 
